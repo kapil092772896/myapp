@@ -1,0 +1,14 @@
+var app = angular.module('kApp', ['ngRoute']);
+
+app.config(['$routeProvider',
+function($routeProvider){
+	$routeProvider.
+	when('/',{
+		templateUrl: 'views/userList.html',
+		controller: 'userListController'
+		}).	
+		when('/addUser/',{
+			 templateUrl: 'views/userForm.html',
+			 controller: 'saveUserController'
+			})
+	}]);

@@ -1,0 +1,38 @@
+<div class="container">
+	<h2 ng-show="!UserData.userid">Add User</h2>
+	<h2 ng-show="UserData.userid">Update User</h2>
+	<form name="saveUser">
+		<div class="form-group">
+			<label for="firstName">First Name<span class="text-danger">*</span></label>
+			<input type="text" name="firstName" id="firstName" class="form-control" minlength="2" maxlength="100" data-ng-model="UserData.firstName" required/>
+			<span style="color:red" ng-show="saveUser.firstName.$dirty && saveUser.firstName.$invalid">
+  			<span ng-show="saveUser.firstName.$error.required">First Name is required.</span>
+  			</span>
+		</div>
+		<div class="form-group">
+			<label for="lastName">Last Name<span class="text-danger">*</span></label>
+			<input type="text" name="lastName" id="lastName" class="form-control" minlength="2" maxlength="100"  data-ng-model="UserData.lastName" required/>
+			<span style="color:red" ng-show="saveUser.lastName.$dirty && saveUser.lastName.$invalid">
+  			<span ng-show="saveUser.lastName.$error.required">Last Name is required.</span>
+  			</span>
+		</div>
+		<div class="form-group">
+			<label for="email">Email<span class="text-danger">*</span></label>
+			<input type="email" name="email" id="email" class="form-control" minlength="2" maxlength="100"  data-ng-model="UserData.email" required />
+			<span style="color:red" ng-show="saveUser.email.$dirty && saveUser.email.$invalid">
+  			<span ng-show="saveUser.email.$error.required">Email is required.</span>
+  			<span ng-show="saveUser.email.$error.email">Invalid email address.</span>
+  			</span>
+		</div>
+		<div class="form-group">
+			<label for="address">Address</label>
+			<textarea name="address" id="address" class="form-control" minlength="2" maxlength="100" data-ng-model="UserData.address"></textarea>
+		</div>
+		<div class="control-group">
+                
+                <a ng-click="saveData(UserData.userid)" class="btn btn-small btn-primary" ng-show="UserData.userid" ng-disabled="(saveUser.firstName.$dirty && saveUser.firstName.$invalid) || (saveUser.lastName.$dirty && saveUser.lastName.$invalid) || (saveUser.email.$dirty && saveUser.email.$invalid)">Update User</a> 
+			    <a ng-click="saveData()" class="btn btn-small btn-primary" ng-show="!UserData.userid" ng-disabled="saveUser.firstName.$invalid || saveUser.lastName.$invalid || saveUser.email.$invalid">Create User</a>
+			    <a ng-click="cancel()" class="btn btn-small btn-default">cancel</a>
+        </div>
+	</form>
+</div>

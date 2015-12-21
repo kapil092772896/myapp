@@ -1,0 +1,21 @@
+<div class="container">
+	<h2 class="text-center">User List</h2>
+	<div class="text-right"><a ng-click="createUser()" class="btn btn-small btn-success">Create new user</a></div>
+	<table class="table table-hover">
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			
+			<tr data-ng-repeat="user in userData">
+				<td> {{ user.firstName }}</td>
+				<td> {{ user.lastName }}</td>
+				<td> {{ user.email }}</td>
+				<td > <a class='btn btn-info' data-ng-click="viewUser( $index )">View</a> <a class='btn btn-primary'  data-ng-click="editUser( $index )">Edit</a> <a class='btn btn-danger'  data-ng-click="deleteUser($index)">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
