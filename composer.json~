@@ -1,8 +1,8 @@
 {
-    "name": "kaps/kaps-js-css",
+    "name": "kaps/angulerjslib",
     "type": "library",
     "description": "Library for anguler project",
-    "keywords": ["angulerjsfile","kaps-js-css"],
+    "keywords": ["angulerjs","angulerjsfile"],
     "homepage": "https://github.com/kapil092772896",
     "license": "no",
     "authors": [
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Kaps-js-css": "src"
+            "Angulerjslib": "src"
         }
     }
 }
